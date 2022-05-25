@@ -1,5 +1,10 @@
 from django.db import models
+from django.utils import timezone
  
-class Info(models.Model):
-    content_text = models.CharField(max_length=200)
-    create_date = models.DateTimeField('date published')
+# Create your models here.
+class Post(models.Model):
+    
+    text = models.TextField()
+    # 작성일자
+    created_date = models.DateTimeField(default=timezone.now)
+    
